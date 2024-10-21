@@ -23,7 +23,6 @@ def reemplazar_linea_y_generar_nuevo_archivo(ruta_archivo_original, texto_reempl
             else:
                 archivo_nuevo.write(linea)
 
-# Uso del código
 pulso = 50
 rangos =[7,8,9]
 a = 50
@@ -44,7 +43,7 @@ betas = [
     5000000
     ]
 
-ruta_archivo_original = '/home/walter/Documents/paper_crossbars/submits/submit1.sh'  # Cambia esto por la ruta de tu archivo original
+ruta_archivo_original = '/home/walter/Documents/paper_crossbars/submits/submit1.sh' 
 
 for rango in rangos:
     nueva_carpeta = f'/home/walter/Documents/paper_crossbars/submits/no_lineal_pulso_{pulso}_rango_{rango}_a_{a}'
@@ -53,7 +52,6 @@ for rango in rangos:
     for beta in  betas: 
         texto_reemplazo  = { 'pulso=' : f'pulso="{pulso}"\n' , 'rango=' : f'rango="{rango}"\n' , 'a=' : f'a="{a}"\n' , 'beta=' : f'beta="{beta}"\n' }
         ruta_archivo_nuevo = nueva_carpeta + f'/submit_{beta}.sh'  # Ruta del archivo nuevo que se creará
-        # Llamar a la función para generar el nuevo archivo con la línea modificada
         reemplazar_linea_y_generar_nuevo_archivo(ruta_archivo_original, texto_reemplazo, ruta_archivo_nuevo)
         
         
